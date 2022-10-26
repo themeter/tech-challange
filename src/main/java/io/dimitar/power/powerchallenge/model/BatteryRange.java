@@ -4,68 +4,68 @@ import java.util.List;
 
 /**
  * Response entity for batteries within a given postcode range.
- * 
+ *
  */
 public class BatteryRange {
 
-	int startPostcode;
-	int endPostcode;
-	List<String> names;
-	double totalCapacity;
-	double averageCapacity;
-	
-	public BatteryRange(
-			int startPostcode, 
-			int endPostcode, 
-			List<String> names, 
-			double totalCapacity,
-			double averageCapacity) {
+    int startPostcode;
+    int endPostcode;
+    List<String> names;
+    double totalCapacity;
+    double averageCapacity;
 
-		this.startPostcode = startPostcode;
-		this.endPostcode = endPostcode;
-		this.names = names;
-		this.totalCapacity = totalCapacity;
-		this.averageCapacity = averageCapacity;
-	}
+    public BatteryRange(
+            int startPostcode,
+            int endPostcode,
+            List<String> names,
+            double totalCapacity,
+            double averageCapacity) {
 
-	public int getStartPostcode() {
-		return startPostcode;
-	}
+        this.startPostcode = startPostcode;
+        this.endPostcode = endPostcode;
+        this.names = names;
+        this.totalCapacity = totalCapacity;
+        this.averageCapacity = averageCapacity;
+    }
 
-	public void setStartPostcode(int startPostcode) {
-		this.startPostcode = startPostcode;
-	}
+    public int getStartPostcode() {
+        return startPostcode;
+    }
 
-	public int getEndPostcode() {
-		return endPostcode;
-	}
+    public void setStartPostcode(int startPostcode) {
+        this.startPostcode = startPostcode;
+    }
 
-	public void setEndPostcode(int endPostcode) {
-		this.endPostcode = endPostcode;
-	}
+    public int getEndPostcode() {
+        return endPostcode;
+    }
 
-	public List<String> getNames() {
-		return names;
-	}
+    public void setEndPostcode(int endPostcode) {
+        this.endPostcode = endPostcode;
+    }
 
-	public void setNames(List<String> names) {
-		this.names = names;
-	}
+    public List<String> getNames() {
+        return names;
+    }
 
-	public double getTotalCapacity() {
-		return totalCapacity;
-	}
+    public void setNames(List<String> names) {
+        this.names = names;
+    }
 
-	public void setTotalCapacity(double totalCapacity) {
-		this.totalCapacity = totalCapacity;
-	}
+    public double getTotalCapacity() {
+        return totalCapacity;
+    }
 
-	public double getAverageCapacity() {
-		return averageCapacity;
-	}
+    public void setTotalCapacity(double totalCapacity) {
+        this.totalCapacity = totalCapacity;
+    }
 
-	public void setAverageCapacity(double averageCapacity) {
-		this.averageCapacity = averageCapacity;
-	}
-	
+    public double getAverageCapacity() {
+        return averageCapacity;
+    }
+
+    public void setAverageCapacity(double averageCapacity) {
+        this.averageCapacity = averageCapacity;
+    }
+
 }

@@ -1,7 +1,6 @@
 package io.dimitar.power.powerchallenge.rest;
 
 import java.util.List;
-import java.util.stream.StreamSupport;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -19,31 +18,31 @@ import io.dimitar.power.powerchallenge.model.PostcodeRange;
 import io.dimitar.power.powerchallenge.service.BatteryService;
 
 /**
- * 
+ *
  */
 @RestController
 @RequestMapping("/api/battery")
 public class BatteryController {
 
-	@Autowired
-	private BatteryService batteryService;
+    @Autowired
+    private BatteryService batteryService;
 
-	@Autowired
-	private BatteryRepository batteryRepository;
+    @Autowired
+    private BatteryRepository batteryRepository;
 
-	@GetMapping("/all")
-	public ResponseEntity<List<Battery>> findAllBatteries() {
-		return ResponseEntity.ok(StreamSupport.stream(batteryRepository.findAll().spliterator(), false).toList());
-	}
+    //	@GetMapping("/all")
+    //	public ResponseEntity<List<Battery>> findAllBatteries() {
+    //		return ResponseEntity.ok(StreamSupport.stream(batteryRepository.findAll().spliterator(), false).toList());
+    //	}
 
-	@GetMapping
-	public ResponseEntity<BatteryRange> findBatteriesByPostcodeRange(@Validated @RequestBody PostcodeRange range) {
-		return ResponseEntity.ok(batteryService.retriveBatteries(range.getStart(), range.getEnd()));
-	}
+    @GetMapping
+    public ResponseEntity<BatteryRange> findBatteriesByPostcodeRange(@Validated @RequestBody PostcodeRange range) {
+        return ResponseEntity.ok(batteryService.retriveBatteries(range.getStart(), range.getEnd()));
+    }
 
-	@PostMapping
-	public ResponseEntity<List<Battery>> saveBattery(@Validated @RequestBody List<Battery> batteries) {
-		return ResponseEntity.ok(batteryService.storeBatteries(batteries));
-	}
+    @PostMapping
+    public ResponseEntity<List<Battery>> saveBatteries(@Validated @RequestBody List<Battery> batteries) {
+        return ResponseEntity.ok(batteryService.storeBatteries(batteries));
+    }
 
 }
