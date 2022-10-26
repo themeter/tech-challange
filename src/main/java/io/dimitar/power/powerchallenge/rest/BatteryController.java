@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import io.dimitar.power.powerchallenge.model.Battery;
 import io.dimitar.power.powerchallenge.model.BatteryRange;
-import io.dimitar.power.powerchallenge.model.BatteryRepository;
 import io.dimitar.power.powerchallenge.model.PostcodeRange;
 import io.dimitar.power.powerchallenge.service.BatteryService;
 
@@ -26,14 +25,6 @@ public class BatteryController {
 
     @Autowired
     private BatteryService batteryService;
-
-    @Autowired
-    private BatteryRepository batteryRepository;
-
-    //	@GetMapping("/all")
-    //	public ResponseEntity<List<Battery>> findAllBatteries() {
-    //		return ResponseEntity.ok(StreamSupport.stream(batteryRepository.findAll().spliterator(), false).toList());
-    //	}
 
     @GetMapping
     public ResponseEntity<BatteryRange> findBatteriesByPostcodeRange(@Validated @RequestBody PostcodeRange range) {
