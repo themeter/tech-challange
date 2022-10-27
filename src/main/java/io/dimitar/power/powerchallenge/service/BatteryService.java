@@ -38,8 +38,8 @@ public class BatteryService {
         Query query = entityManager.createNamedQuery("Battery.findWithinPostcodeRange");
         query.setParameter(1, start);
         query.setParameter(2, end);
-
         List<Battery> results = query.getResultList();
+
         List<String> names = results.stream().map(Battery::getName).sorted().toList();
         double totalCapacity = results.stream().mapToDouble(Battery::getCapacity).sum();
         double averageCapacity = results.stream().mapToDouble(Battery::getCapacity).average().orElse(0);
